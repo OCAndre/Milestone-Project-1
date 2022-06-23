@@ -1,35 +1,34 @@
 # Milestone-Project-1
 
 Project Description
-(Replace this text with a brief description of your game and what inspired you to make it.)
+I plan on making a basic version of chess. It will be pvp.
 
 Game Logic
-Replace this text with pseudocode.
-The pseudocode should describe in plain, simple language the logic of the game.
-Describe the logic involved in player decisions. 
-  - What are the choices available to the player? 
-  - What happens when the player makes a choice?
-Describe the logic that evaluates the player's victory/loss/progress status.
+
+The player should be able to move any of their pieces on a virtual chess board according to the rules of chess.
+Players should be able to take opposing pieces based on the rules of chess.  
+White should move first and then turns will alternate.
+Have a submit button or similar concept to end each player's turn.
+Game over when a king is in checkmate
+
 Deliverables
-Even if you have a great big idea for a game, it's important to scope this project according to what you can get done in the next two weeks. We'll refer to your project completion goal using the term Minimum Viable Product (MVP) -- a list of the criteria needed to "ship" a playable version of your game that meets the project requirements.
-
-Don't lose sight of your big ideas, though! Keep a list of further improvements you can refer to as Post-MVP Ideas. You might finish some before our project time is done, or you might work on them later!
-
-For your README, delete this blockquote and fill in the lists below.
 
 MVP Criteria
-One thing my game must do to meet my minimum standard.
-Another thing.
-Etc.
+The game must present a playable version of chess.
+
 Post-MVP Plans
-One great idea I hope to be able to add in before the project deadline.
-Another that will be a stretch.
-Something else I don't technically know how to do... yet. :)
+I'd like to have some way to track turns and not just have both sides able to move at the same time.
+Maybe have an animation of the board turning between turns.
+
+Stretch: Quality of life improvements. Such as restrictin where a piece can be moved etc.
+
+Something I don't know how to do yet: animations maybe? Turn timers?
+
 Project Planning
 Date	Goals
 Thu. 06/23	Create GitHub repository. Complete README.md.
-Sun. 06/26	
-Tue. 06/28	
-Thu. 06/30	
+Sun. 06/26	complete chess board and have all assets
+Tue. 06/28	finish base logic
+Thu. 06/30	Improve on the design
 Sun. 07/03	Deploy MVP to GitHub Pages.
 Tue. 07/05	Submit completed project. Project presentations.
