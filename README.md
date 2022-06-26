@@ -6,7 +6,7 @@ I plan on making a basic version of chess. It will be pvp.
 Game Logic
 
 Setup:
-an 8x8 square grid with alternating color scheme should be shown.
+an 8x8 square grid with alternating color scheme (Both in row and in coloumn) should be shown.
 The top 2 and bottom two rows should have the pieces in them when the game starts.
 
 Pieces with white on the bottom (1) and black on the top (8):
@@ -40,13 +40,14 @@ MVP Criteria
 A chess board with the proper setup (See game logic) should show at the start.
 Players can move each piece according to the rules of chess.
 Pieces should be removed from the board when a piece legally takes them.
-If a player's king is in check only moves that remove check should be made.
-Game ends if a player's king is in checkmate.
-Reset button that resets the pieces to their starting positions.
+
 
 Post-MVP Plans
 I'd like to have some way to track turns and not just have both sides able to move at the same time.
 Maybe have an animation of the board turning between turns.
+If a player's king is in check only moves that remove check should be made.
+Game ends if a player's king is in checkmate.
+Reset button that resets the pieces to their starting positions.
 
 Stretch: Quality of life improvements. Such as highlighting where a piece can be moved etc.
 
