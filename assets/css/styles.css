@@ -2,6 +2,10 @@ body {
     text-align: center;
 }
 
+.hide {
+    display: none;
+}
+
 #board {
     width: 500px;
     height: 500px;
@@ -29,38 +33,12 @@ body {
     margin: 0%;
 }
 
-.fa-chess-pawn {
+.piece {
     position: relative;
-    font-size: larger;
     top: 30%;
+    font-size: larger;
 }
 
-.fa-chess-rook {
-    position: relative;
-    font-size: larger;
-    top: 30%;
-}
-
-.fa-chess-knight {
-    position: relative;
-    font-size: larger;
-    top: 30%;
-}
-
-.fa-chess-bishop {
-    position: relative;
-    font-size: larger;
-    top: 30%;
-}
-
-.fa-chess-queen {
-    position: relative;
-    font-size: larger;
-    top: 30%;
-}
-
-.fa-chess-king {
-    position: relative;
-    font-size: larger;
-    top: 30%;
+.drag-over {
+    border: solid 3px white;
 }
