@@ -14,53 +14,53 @@ body {
 .white {
     background-color: burlywood;
     font-size: 20px;
-    min-height: 50;
-    min-width: 50;
-    margin: 0;
-    padding: 0;
+    max-width: 62.5px;
+    max-height: 62.5px;
+    min-height: 62.5px;
+    margin: 0%;
 }
 
 .black {
     background-color: #7D533E;
     font-size: 20px;
-    min-height: 50;
-    min-width: 50;
-    margin: 0;
-    padding: 0;
+    max-width: 62.5px;
+    max-height: 62.5px;
+    min-height: 62.5px;
+    margin: 0%;
 }
 
 .fa-chess-pawn {
-    position: fixed;
+    position: relative;
     font-size: larger;
-    margin-top: 1%;
+    top: 30%;
 }
 
 .fa-chess-rook {
-    position: fixed;
+    position: relative;
     font-size: larger;
-    margin-top: 1%;
+    top: 30%;
 }
 
 .fa-chess-knight {
-    position: fixed;
+    position: relative;
     font-size: larger;
-    margin-top: 1%;
+    top: 30%;
 }
 
 .fa-chess-bishop {
-    position: fixed;
+    position: relative;
     font-size: larger;
-    margin-top: 1%;
+    top: 30%;
 }
 
 .fa-chess-queen {
-    position: fixed;
+    position: relative;
     font-size: larger;
-    margin-top: 1%;
+    top: 30%;
 }
 
 .fa-chess-king {
-    position: fixed;
+    position: relative;
     font-size: larger;
-    margin-top: 1%;
+    top: 30%;
 }
