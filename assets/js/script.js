@@ -47,7 +47,7 @@ rookKsW.addEventListener('dragstart', dragStart);
 function dragStart(e) {
     e.dataTransfer.setData('text/plain', e.target.id);
     setTimeout(() => {
-        e.targer.classList.add('hide');
+        e.target.classList.add('hide');
     }, 0);
 }
 
@@ -73,9 +73,13 @@ function dragLeave(e) {
 }
 
 function drop(e) {
+
     e.target.classList.remove('drag-over');
-    const id = e.dataTransfer.getData('text/plain');
-    const draggable = document.getElementById(id);
+    let id = e.dataTransfer.getData('text/plain');
+    let draggable = document.getElementById(id);
+    if (e.target.firstChild != null) {
+        e.target.firstChild.remove();
+    }
     e.target.appendChild(draggable);
     draggable.classList.remove('hide');
 }
