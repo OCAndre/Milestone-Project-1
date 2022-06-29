@@ -2,11 +2,39 @@
 let board = document.querySelector('#board');
 const square = document.querySelectorAll('.square');
 // Black pieces
-// const rookQsB = document.querySelector('.rookQsB');
-
-// const kingB = document.querySelector('.kingB');
+let pawn1B = document.querySelector('#pawn1B');
+let pawn2B = document.querySelector('#pawn2B');
+let pawn3B = document.querySelector('#pawn3B');
+let pawn4B = document.querySelector('#pawn4B');
+let pawn5B = document.querySelector('#pawn5B');
+let pawn6B = document.querySelector('#pawn6B');
+let pawn7B = document.querySelector('#pawn7B');
+let pawn8B = document.querySelector('#pawn8B');
+let rookQsB = document.querySelector('#rookQsB');
+let knightQsB = document.querySelector('#knightQsB');
+let bishopQsB = document.querySelector('#bishopQsB');
+let queenB = document.querySelector('#queenB');
+let kingB = document.querySelector('#kingB');
+let bishopKsB = document.querySelector('#bishopKsB');
+let knightKsB = document.querySelector('#knightKsB');
+let rookKsB = document.querySelector('#rookKsB');
 // White pieces
-
+let pawn1W = document.querySelector('#pawn1W');
+let pawn2W = document.querySelector('#pawn2W');
+let pawn3W = document.querySelector('#pawn3W');
+let pawn4W = document.querySelector('#pawn4W');
+let pawn5W = document.querySelector('#pawn5W');
+let pawn6W = document.querySelector('#pawn6W');
+let pawn7W = document.querySelector('#pawn7W');
+let pawn8W = document.querySelector('#pawn8W');
+let rookQsW = document.querySelector('#rookQsW');
+let knightQsW = document.querySelector('#knightQsW');
+let bishopQsW = document.querySelector('#bishopQsW');
+let queenW = document.querySelector('#queenW');
+let kingW = document.querySelector('#kingW');
+let bishopKsW = document.querySelector('#bishopKsW');
+let knightKsW = document.querySelector('#knightKsW');
+let rookKsW = document.querySelector('#rookKsW');
 // add dragStart listeners
 // Black
 pawn1B.addEventListener('dragstart', dragStart);
@@ -46,11 +74,9 @@ rookKsW.addEventListener('dragstart', dragStart);
 // Dragstart function
 function dragStart(e) {
     e.dataTransfer.setData('text/plain', e.target.id);
-    setTimeout(() => {
-        e.target.classList.add('hide');
-    }, 0);
 }
 
+// Events for each square
 square.forEach(square => {
     square.addEventListener('dragenter', dragEnter)
     square.addEventListener('dragover', dragOver);
@@ -58,28 +84,47 @@ square.forEach(square => {
     square.addEventListener('drop', drop);
 });
 
+// dragenter function
 function dragEnter(e) {
     e.preventDefault();
     e.target.classList.add('drag-over');
 }
 
+// dragOver function
 function dragOver(e) {
     e.preventDefault();
     e.target.classList.add('drag-over');
 }
 
+// dragLeave funciton
 function dragLeave(e) {
     e.target.classList.remove('drag-over');
 }
 
+// drop function
 function drop(e) {
-
     e.target.classList.remove('drag-over');
     let id = e.dataTransfer.getData('text/plain');
     let draggable = document.getElementById(id);
     if (e.target.firstChild != null) {
-        e.target.firstChild.remove();
+        if (e.target.firstChild != draggable) {
+            e.target.firstChild.remove();
+        }
     }
     e.target.appendChild(draggable);
-    draggable.classList.remove('hide');
 }
+//     let id = e.dataTransfer.getData('text/plain');
+//     let draggable = document.getElementById(id);
+//     if (e.target.firstChild != null) {
+//         if (e.target.firstChild.constuctor.name == draggable.constructor.name) {
+//             console.log(1);
+//         }
+//         else {
+//             e.target.firstChild.remove();
+//             e.target.appendChild(draggable);
+//         }
+//     }
+//     else {
+//         e.target.appendChild(draggable);
+//     }
+// }

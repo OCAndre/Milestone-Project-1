@@ -2,10 +2,6 @@ body {
     text-align: center;
 }
 
-.hide {
-    display: none;
-}
-
 #board {
     width: 500px;
     height: 500px;
@@ -33,7 +29,8 @@ body {
     margin: 0%;
 }
 
-.piece {
+.whitePiece,
+.blackPiece {
     position: relative;
     top: 30%;
     font-size: larger;
