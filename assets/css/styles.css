@@ -1,5 +1,15 @@
 body {
     text-align: center;
+    /* Decide on background chess vs wood table */
+    background-image: url(/assets/Images/damiano-lingauri-bUM4weg0RSI-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+h1,
+h2 {
+    color: white;
 }
 
 #board {
