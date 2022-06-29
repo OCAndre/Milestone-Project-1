@@ -107,24 +107,15 @@ function drop(e) {
     let id = e.dataTransfer.getData('text/plain');
     let draggable = document.getElementById(id);
     if (e.target.firstChild != null) {
-        if (e.target.firstChild != draggable) {
+        if (draggable.className === e.target.className || draggable.className === e.target.firstChild.className) {
+            console.log('Can not capture your own piece')
+        }
+        else {
             e.target.firstChild.remove();
+            e.target.appendChild(draggable);
         }
     }
-    e.target.appendChild(draggable);
+    else {
+        e.target.appendChild(draggable);
+    }
 }
-//     let id = e.dataTransfer.getData('text/plain');
-//     let draggable = document.getElementById(id);
-//     if (e.target.firstChild != null) {
-//         if (e.target.firstChild.constuctor.name == draggable.constructor.name) {
-//             console.log(1);
-//         }
-//         else {
-//             e.target.firstChild.remove();
-//             e.target.appendChild(draggable);
-//         }
-//     }
-//     else {
-//         e.target.appendChild(draggable);
-//     }
-// }
