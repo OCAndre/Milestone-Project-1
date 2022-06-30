@@ -6,7 +6,7 @@ I plan on making a basic version of chess. It will be built for pvp and will not
 ## Game Logic
 
 ### Setup:
-an 8x8 square grid with alternating color scheme (Both in row and in coloumn) should be shown.
+An 8x8 square grid with alternating color scheme (Both in row and in coloumn) should be shown.
 The top 2 and bottom two rows should have the pieces in them when the game starts.
 Pieces with white on the bottom (1) and black on the top (8):
 row 1 & 8: rook, knight, bishop, queen, king, bishop, knight, rook
@@ -18,11 +18,11 @@ The player should be able to move any of their pieces on a virtual chess board a
  Example of piece movement:
 
 Pawn:
-Can move one or two spaces forward if it has not been moved.
-Otherwise it can only move one space forward.
-Can't move over or into a space that is taken up by a piece of the same color.
-Can't take an opposing piece unless it is one diagonal space away in front of the pawn.
-If the pawn reaches the last row it becomes a queen.
+- Can move one or two spaces forward if it has not been moved.
+- Otherwise it can only move one space forward.
+- Can't move over or into a space that is taken up by a piece of the same color.
+- Can't take an opposing piece unless it is one diagonal space away in front of the pawn.
+- If the pawn reaches the last row it becomes a queen.
 
 Players should be able to take opposing pieces based on the rules of chess.  
 
@@ -56,11 +56,10 @@ There should be a reset button to return pieces to their starting position.
 - Turn timers
 
 # Project Planning
-| Date |	| Goals |
-| ----------- | ----------- |
-| Thu. 06/23 |	| Create GitHub repository. Complete README.md. |
-| Sun. 06/26 |	| complete chess board and have all assets |
-| Tue. 06/28 |	| finish base logic |
-| Thu. 06/30 |	| Improve on the design |
-| Sun. 07/03 |	| Deploy MVP to GitHub Pages. |
-| Tue. 07/05 |	| Submit completed project. Project presentations. |
+Date: Goals
+Thu. 06/23: Create GitHub repository. Complete README.md.
+Sun. 06/26: Complete chess board and have all assets.
+Tue. 06/28: Finish base logic.
+Thu. 06/30: Improve on the design.
+Sun. 07/03: Deploy MVP to GitHub Pages.
+Tue. 07/05: Submit completed project. Project presentations.

@@ -1,4 +1,5 @@
 // get elements
+let h2 = document.getElementsByTagName('h2');
 let board = document.querySelector('#board');
 const square = document.querySelectorAll('.square');
 // Black pieces
@@ -106,21 +107,20 @@ function drop(e) {
     e.target.classList.remove('drag-over');
     let id = e.dataTransfer.getData('text/plain');
     let draggable = document.getElementById(id);
+    // Check if a piece is in the square
     if (e.target.firstChild != null) {
         if (draggable.className === e.target.className || draggable.className === e.target.firstChild.className) {
             console.log('Can not capture your own piece')
         }
-        else if (e.target.id == kingB || e.target.firstChild.id == kingB) {
-            console.log('White wins!')
-        }
         else {
-            // if (e.target.firstChild.id == 'kingB') {
-            //     console.log('white wins!')
-            // }
-            // else if (e.target.firstChild.id == 'kingW') {
-            //     console.log('black wins!')
-            // }
-            // console.log(e.target.firstChild.id)
+            // Check if the piece is a king
+            if (e.target.id === 'kingB' || e.target.firstChild.id === 'kingB') {
+                window.alert("White Wins!")
+            }
+            else if (e.target.id === 'kingW' || e.target.firstChild.id === 'kingW') {
+                window.alert("Black Wins!")
+            }
+            // capture the piece
             e.target.firstChild.remove();
             e.target.appendChild(draggable);
         }
