@@ -110,7 +110,17 @@ function drop(e) {
         if (draggable.className === e.target.className || draggable.className === e.target.firstChild.className) {
             console.log('Can not capture your own piece')
         }
+        else if (e.target.id == kingB || e.target.firstChild.id == kingB) {
+            console.log('White wins!')
+        }
         else {
+            // if (e.target.firstChild.id == 'kingB') {
+            //     console.log('white wins!')
+            // }
+            // else if (e.target.firstChild.id == 'kingW') {
+            //     console.log('black wins!')
+            // }
+            // console.log(e.target.firstChild.id)
             e.target.firstChild.remove();
             e.target.appendChild(draggable);
         }
