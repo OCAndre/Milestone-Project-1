@@ -1,7 +1,7 @@
 // get elements
-let h2 = document.getElementsByTagName('h2');
 let board = document.querySelector('#board');
 const square = document.querySelectorAll('.square');
+
 // Black pieces
 let pawn1B = document.querySelector('#pawn1B');
 let pawn2B = document.querySelector('#pawn2B');

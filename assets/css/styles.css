@@ -9,7 +9,7 @@ body {
 
 h1,
 h2 {
-    color: white;
+    color: lightgrey;
 }
 
 #board {
@@ -47,14 +47,10 @@ h2 {
 }
 
 .drag-over {
-    border: solid 3px white;
+    border: solid 3px lightgr;
 }
 
-.extras {
-    background-color: black;
-    border: solid white;
-    width: 500px;
-    height: 100px;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+a {
+    font-size: larger;
+    color: lightgray;
 }
