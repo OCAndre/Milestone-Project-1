@@ -1,6 +1,5 @@
 body {
     text-align: center;
-    /* Decide on background chess vs wood table */
     background-image: url(/assets/Images/damiano-lingauri-bUM4weg0RSI-unsplash.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -12,6 +11,19 @@ h2 {
     color: lightgrey;
 }
 
+h1 {
+    margin-bottom: 0;
+}
+
+h2 {
+    padding-right: 1%;
+}
+
+h2,
+a {
+    display: inline;
+}
+
 #board {
     width: 500px;
     height: 500px;
@@ -19,6 +31,7 @@ h2 {
     margin: auto;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
+    margin-top: 20px;
 }
 
 .white {

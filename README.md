@@ -1,5 +1,8 @@
 # Milestone-Project-1
 
+## GitHub pages link
+https://ocandre.github.io/Milestone-Project-1/
+
 ## Project Description
 I plan on making a basic version of chess. It will be built for pvp and will not have logic for a computer opponent.
 

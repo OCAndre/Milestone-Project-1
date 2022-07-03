@@ -4,9 +4,9 @@ const square = document.querySelectorAll('.square');
 
 // Location
 // Potential way to track Location: row 1 from left to right is lettered a-h, column 1 from bottom to top is 1-8
-// Location is coded as two numbers. (a-h,1-8) where a=1,b=2..., (ex. h3=83) 
+// Location is coded as two numbers. (a-h,1-8) where a=1,b=2..., (ex. h3=(8,3)) 
 // location matrix set up by a for loop for each row?
-// let location= [81,82,83,84,85,86,87,88,71,72,73,74,75,76,77,78,79,]
+// let location = [[81, 82, 83, 84, 85, 86, 87, 88], [71, 72, 73, 74, 75, 76, 77, 78, 79], [61, 62, 63, 64, 65, 66, 67, 68, 69], [51, 52, 53, 54, 55, 56, 57, 58, 59], [41, 42, 43, 44, 45, 46, 47, 48, 49], [31, 32, 33, 34, 35, 36, 37, 38, 39], [21, 22, 23, 24, 25, 26, 27, 28, 29], [11, 12, 13, 14, 15, 16, 17, 18, 19],]
 // for (let x = 1; x < 9; x++) {
 //     location =
 // }
@@ -117,6 +117,7 @@ function drop(e) {
     e.target.classList.remove('drag-over');
     let id = e.dataTransfer.getData('text/plain');
     let draggable = document.getElementById(id);
+    let h2 = document.getElementById('welcomeText');
     // Check if a piece is in the square
     if (e.target.firstChild != null) {
         if (draggable.className === e.target.className || draggable.className === e.target.firstChild.className) {
@@ -125,10 +126,11 @@ function drop(e) {
         else {
             // Check if the piece is a king
             if (e.target.id === 'kingB' || e.target.firstChild.id === 'kingB') {
-                window.alert("White Wins!")
+                let h2 = document.getElementById('welcomeText');
+                h2.innerHTML = 'White Wins!';
             }
             else if (e.target.id === 'kingW' || e.target.firstChild.id === 'kingW') {
-                window.alert("Black Wins!")
+                h2.innerHTML = 'Black Wins!';
             }
             // capture the piece
             e.target.firstChild.remove();
