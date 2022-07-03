@@ -103,9 +103,7 @@ rookKsW.addEventListener('dragstart', dragStart);
 
 // Dragstart function
 function dragStart(e) {
-    let startPosition = getPosition(getIndex(e.target.parentNode))
     e.dataTransfer.setData('text/plain', e.target.id);
-    return startPosition;
 }
 
 // Events for each square
@@ -138,32 +136,67 @@ function drop(e) {
     e.target.classList.remove('drag-over');
     let id = e.dataTransfer.getData('text/plain');
     let draggable = document.getElementById(id);
+    let startPosition = getPosition(getIndex(draggable.parentNode))
     let h2 = document.getElementById('welcomeText');
-
-    // Check if a piece is in the square
-    if (e.target.firstChild != null) {
-        if (draggable.className === e.target.className || draggable.className === e.target.firstChild.className) {
-            console.log('Can not capture your own piece')
+    // Check which piece is being 
+    // king
+    if (draggable.id === 'kingW' || draggable.id === 'kingB') {
+        let location = getPosition(getIndex(e.target));
+        if (location.row == startPosition.row + 1 || location.row == startPosition.row - 1 || location.column == startPosition.column + 1 || location.column == startPosition.column - 1) {
+            // Check if a piece is in the square
+            if (e.target.firstChild != null) {
+                if (draggable.className === e.target.className || draggable.className === e.target.firstChild.className) {
+                    console.log('Can not capture your own piece')
+                }
+                else {
+                    // Check if the piece is a king
+                    if (e.target.id === 'kingB' || e.target.firstChild.id === 'kingB') {
+                        let h2 = document.getElementById('welcomeText');
+                        h2.innerHTML = 'White Wins!';
+                    }
+                    else if (e.target.id === 'kingW' || e.target.firstChild.id === 'kingW') {
+                        h2.innerHTML = 'Black Wins!';
+                    }
+                    // capture the piece
+                    e.target.firstChild.remove();
+                    e.target.appendChild(draggable);
+                    let location = getPosition(getIndex(e.target));
+                }
+            }
+            else {
+                e.target.appendChild(draggable);
+                let location = getPosition(getIndex(e.target));
+            }
         }
         else {
-            // Check if the piece is a king
-            if (e.target.id === 'kingB' || e.target.firstChild.id === 'kingB') {
-                let h2 = document.getElementById('welcomeText');
-                h2.innerHTML = 'White Wins!';
+            console.log('not a valid move')
+        }
+    }
+    else {
+        // Check if a piece is in the square
+        if (e.target.firstChild != null) {
+            if (draggable.className === e.target.className || draggable.className === e.target.firstChild.className) {
+                console.log('Can not capture your own piece')
             }
-            else if (e.target.id === 'kingW' || e.target.firstChild.id === 'kingW') {
-                h2.innerHTML = 'Black Wins!';
+            else {
+                // Check if the piece is a king
+                if (e.target.id === 'kingB' || e.target.firstChild.id === 'kingB') {
+                    let h2 = document.getElementById('welcomeText');
+                    h2.innerHTML = 'White Wins!';
+                }
+                else if (e.target.id === 'kingW' || e.target.firstChild.id === 'kingW') {
+                    h2.innerHTML = 'Black Wins!';
+                }
+                // capture the piece
+                e.target.firstChild.remove();
+                e.target.appendChild(draggable);
+                let location = getPosition(getIndex(e.target));
             }
-            // capture the piece
-            e.target.firstChild.remove();
+        }
+        else {
             e.target.appendChild(draggable);
             let location = getPosition(getIndex(e.target));
         }
     }
-    else {
-        e.target.appendChild(draggable);
-        let location = getPosition(getIndex(e.target));
-    }
-}
 
-// check positions function 
+}
