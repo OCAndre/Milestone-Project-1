@@ -38,19 +38,22 @@ row 2 & 7: all pawns
 ## Deliverables
 
 ### MVP Criteria
-- A chess board with the proper setup (See game logic) should show at the start. (done)
+- A chess board with the proper setup (See game logic) should show at the start.
 - Players can move each piece according to the rules of chess. (can move freely atm)
 - Pieces should be removed from the board when a piece takes them.
-- Game ends if a player's king is in taken.
+- Game ends if a player's king is taken.
 
 ### Post-MVP Plans
 - Have some way to track turns and not just have both sides able to move at the same time.
 - Have an animation of the board turning between turns.
+- change pawns into queens if they reach the opposite side of the board.
+- Have a way to check if a king is in check.
 - If a player's king is in check only moves that remove check should be made.
-- Reset button that resets the pieces to their starting positions.
+
 
 ### Stretch: 
-- Quality of life improvements: such as highlighting where a piece can be moved etc.
+- Quality of life improvements: such as highlighting where a piece can be moved, undo button etc.
+- Reset button that resets the pieces to their starting positions.
 
 ### Something I don't know how to do yet: 
 - animations
@@ -63,6 +66,6 @@ row 2 & 7: all pawns
 | Thu. 06/23 | Create GitHub repository. Complete README.md. |
 |    Sun. 06/26        |       Complete chess board and have all assets.                                |
 |Tue. 06/28|         Finish base logic.                              |
-|Thu. 06/30|         Improve on the design..                              |
+|Thu. 06/30|         Improve on the design.                              |
 |Sun. 07/03|         Deploy MVP to GitHub Pages.                              |
 |Tue. 07/05|         Submit completed project. Project presentations                              |
