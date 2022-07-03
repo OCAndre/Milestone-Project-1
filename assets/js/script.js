@@ -2,6 +2,15 @@
 let board = document.querySelector('#board');
 const square = document.querySelectorAll('.square');
 
+// Location
+// Potential way to track Location: row 1 from left to right is lettered a-h, column 1 from bottom to top is 1-8
+// Location is coded as two numbers. (a-h,1-8) where a=1,b=2..., (ex. h3=83) 
+// location matrix set up by a for loop for each row?
+// let location= [81,82,83,84,85,86,87,88,71,72,73,74,75,76,77,78,79,]
+// for (let x = 1; x < 9; x++) {
+//     location =
+// }
+
 // Black pieces
 let pawn1B = document.querySelector('#pawn1B');
 let pawn2B = document.querySelector('#pawn2B');
@@ -75,6 +84,7 @@ rookKsW.addEventListener('dragstart', dragStart);
 // Dragstart function
 function dragStart(e) {
     e.dataTransfer.setData('text/plain', e.target.id);
+    // maybe highlight squares using a current location function based on the piece (e)
 }
 
 // Events for each square
