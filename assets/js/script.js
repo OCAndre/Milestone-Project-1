@@ -64,10 +64,6 @@ let bishopKsW = document.querySelector('#bishopKsW');
 let knightKsW = document.querySelector('#knightKsW');
 let rookKsW = document.querySelector('#rookKsW');
 
-// Starting Positions
-// let pawn1BLocation = getPosition(getIndex(pawn1B));
-// let pawn2BLocation = getPosition(getIndex(pawn1B));
-
 // add dragStart listeners
 // Black
 pawn1B.addEventListener('dragstart', dragStart);
@@ -104,10 +100,12 @@ bishopKsW.addEventListener('dragstart', dragStart);
 knightKsW.addEventListener('dragstart', dragStart);
 rookKsW.addEventListener('dragstart', dragStart);
 
+
 // Dragstart function
 function dragStart(e) {
+    let startPosition = getPosition(getIndex(e.target.parentNode))
     e.dataTransfer.setData('text/plain', e.target.id);
-    // maybe highlight squares using a current location function based on the piece (e)
+    return startPosition;
 }
 
 // Events for each square
@@ -141,6 +139,7 @@ function drop(e) {
     let id = e.dataTransfer.getData('text/plain');
     let draggable = document.getElementById(id);
     let h2 = document.getElementById('welcomeText');
+
     // Check if a piece is in the square
     if (e.target.firstChild != null) {
         if (draggable.className === e.target.className || draggable.className === e.target.firstChild.className) {
@@ -159,7 +158,6 @@ function drop(e) {
             e.target.firstChild.remove();
             e.target.appendChild(draggable);
             let location = getPosition(getIndex(e.target));
-            console.log(location)
         }
     }
     else {
@@ -167,3 +165,5 @@ function drop(e) {
         let location = getPosition(getIndex(e.target));
     }
 }
+
+// check positions function 
