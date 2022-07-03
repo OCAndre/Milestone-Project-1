@@ -44,6 +44,7 @@ row 2 & 7: all pawns
 - Game ends if a player's king is taken.
 
 ### Post-MVP Plans
+- limit movement based on chess rules. (King completed)
 - Have some way to track turns and not just have both sides able to move at the same time.
 - Have an animation of the board turning between turns.
 - change pawns into queens if they reach the opposite side of the board.

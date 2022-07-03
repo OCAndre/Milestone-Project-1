@@ -18,7 +18,6 @@ function getPosition(index) {
     if (colPosition == 0) {
         colPosition = 8;
     }
-    console.log({ column: colPosition, row: rowPosition })
     return { column: colPosition, row: rowPosition };
 }
 
@@ -138,65 +137,115 @@ function drop(e) {
     let draggable = document.getElementById(id);
     let startPosition = getPosition(getIndex(draggable.parentNode))
     let h2 = document.getElementById('welcomeText');
-    // Check which piece is being 
-    // king
-    if (draggable.id === 'kingW' || draggable.id === 'kingB') {
+
+    // Check which piece is being moved
+
+    // pawn
+    if (draggable.id === 'pawn1B' || draggable.id === 'pawn2B' || draggable.id === 'pawn3B' || draggable.id === 'pawn4B' || draggable.id === 'pawn5B' || draggable.id === 'pawn6B' || draggable.id === 'pawn7B' || draggable.id === 'pawn8B' || draggable.id === 'pawn1W' || draggable.id === 'pawn2W' || draggable.id === 'pawn3W' || draggable.id === 'pawn4W' || draggable.id === 'pawn5W' || draggable.id === 'pawn6W' || draggable.id === 'pawn7W' || draggable.id === 'pawn8W') {
         let location = getPosition(getIndex(e.target));
-        if (location.row == startPosition.row + 1 || location.row == startPosition.row - 1 || location.column == startPosition.column + 1 || location.column == startPosition.column - 1) {
-            // Check if a piece is in the square
-            if (e.target.firstChild != null) {
-                if (draggable.className === e.target.className || draggable.className === e.target.firstChild.className) {
-                    console.log('Can not capture your own piece')
-                }
-                else {
-                    // Check if the piece is a king
-                    if (e.target.id === 'kingB' || e.target.firstChild.id === 'kingB') {
-                        let h2 = document.getElementById('welcomeText');
-                        h2.innerHTML = 'White Wins!';
+        // check if first move
+        let firstMove = false;
+        // White
+        if (draggable.className === "whitePiece") {
+            if (startPosition.row == 2) {
+                firstMove = true;
+            }
+            // If first Move -> can move 2 spaces, else -> 1 space
+            if (firstMove == true) {
+                if ((location.row == startPosition.row + 1 || location.row == startPosition.row + 2) && location.column == startPosition.column) {
+                    // check that space is empty
+                    if (e.target.firstChild == null) {
+                        move(e, draggable)
                     }
-                    else if (e.target.id === 'kingW' || e.target.firstChild.id === 'kingW') {
-                        h2.innerHTML = 'Black Wins!';
-                    }
-                    // capture the piece
-                    e.target.firstChild.remove();
-                    e.target.appendChild(draggable);
-                    let location = getPosition(getIndex(e.target));
                 }
             }
             else {
-                e.target.appendChild(draggable);
-                let location = getPosition(getIndex(e.target));
+                if (location.row == startPosition.row + 1 && location.column == startPosition.column) {
+                    // check that space is empty
+                    if (e.target.firstChild == null) {
+                        move(e, draggable)
+                    }
+                }
             }
+            // capture with pawn
+            if (location.row == startPosition.row + 1 && (location.column === startPosition.column + 1 || location.column === startPosition.column - 1)) {
+                // Check that the space has a piece in it and capture
+                if (e.target.firstChild != null) {
+                    move(e, draggable)
+                }
+            }
+        }
+
+        // Black
+        else if (draggable.className === "blackPiece") {
+            if (startPosition.row == 7) {
+                firstMove = true;
+            }
+            // If first Move -> can move 2 spaces, else -> 1 space
+            if (firstMove == true) {
+                if ((location.row == startPosition.row - 1 || location.row == startPosition.row - 2) && location.column == startPosition.column) {
+                    // check that space is empty
+                    if (e.target.firstChild == null) {
+                        move(e, draggable)
+                    }
+                }
+            }
+            else {
+                if (location.row == startPosition.row - 1 && location.column == startPosition.column) {
+                    // check that space is empty
+                    if (e.target.firstChild == null) {
+                        move(e, draggable)
+                    }
+                }
+            }
+            // capture with pawn
+            if (location.row == startPosition.row - 1 && (location.column === startPosition.column + 1 || location.column === startPosition.column - 1)) {
+                // Check that the space has a piece in it and capture
+                if (e.target.firstChild != null) {
+                    move(e, draggable)
+                }
+            }
+        }
+
+    }
+    // king
+    else if (draggable.id === 'kingW' || draggable.id === 'kingB') {
+        let location = getPosition(getIndex(e.target));
+        if ((location.row == startPosition.row + 1 && (location.column <= startPosition.column + 1 && location.column >= startPosition.column - 1)) || (location.row == startPosition.row - 1 && (location.column <= startPosition.column + 1 && location.column >= startPosition.column - 1)) || (location.column == startPosition.column + 1 && (location.row <= startPosition.row + 1 && location.row >= startPosition.row - 1)) || (location.column == startPosition.column - 1 && (location.row <= startPosition.row + 1 && location.row >= startPosition.row - 1))) {
+            move(e, draggable);
         }
         else {
             console.log('not a valid move')
         }
     }
     else {
-        // Check if a piece is in the square
-        if (e.target.firstChild != null) {
-            if (draggable.className === e.target.className || draggable.className === e.target.firstChild.className) {
-                console.log('Can not capture your own piece')
-            }
-            else {
-                // Check if the piece is a king
-                if (e.target.id === 'kingB' || e.target.firstChild.id === 'kingB') {
-                    let h2 = document.getElementById('welcomeText');
-                    h2.innerHTML = 'White Wins!';
-                }
-                else if (e.target.id === 'kingW' || e.target.firstChild.id === 'kingW') {
-                    h2.innerHTML = 'Black Wins!';
-                }
-                // capture the piece
-                e.target.firstChild.remove();
-                e.target.appendChild(draggable);
-                let location = getPosition(getIndex(e.target));
-            }
-        }
-        else {
-            e.target.appendChild(draggable);
-            let location = getPosition(getIndex(e.target));
-        }
+        move(e, draggable);
     }
 
+}
+
+function move(e, draggable) {
+    let h2 = document.getElementById('welcomeText');
+    // Check if a piece is in the square
+    if (e.target.firstChild != null) {
+        if (draggable.className === e.target.className || draggable.className === e.target.firstChild.className) {
+            console.log('Can not capture your own piece')
+        }
+        else {
+            // Check if the piece is a king
+            if (e.target.id === 'kingB' || e.target.firstChild.id === 'kingB') {
+                let h2 = document.getElementById('welcomeText');
+                h2.innerHTML = 'White Wins!';
+            }
+            else if (e.target.id === 'kingW' || e.target.firstChild.id === 'kingW') {
+                h2.innerHTML = 'Black Wins!';
+            }
+            // capture the piece
+            e.target.firstChild.remove();
+            e.target.appendChild(draggable);
+        }
+    }
+    else {
+        e.target.appendChild(draggable);
+    }
 }
