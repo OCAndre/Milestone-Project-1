@@ -3,13 +3,31 @@ let board = document.querySelector('#board');
 const square = document.querySelectorAll('.square');
 
 // Location
-// Potential way to track Location: row 1 from left to right is lettered a-h, column 1 from bottom to top is 1-8
-// Location is coded as two numbers. (a-h,1-8) where a=1,b=2..., (ex. h3=(8,3)) 
-// location matrix set up by a for loop for each row?
-// let location = [[81, 82, 83, 84, 85, 86, 87, 88], [71, 72, 73, 74, 75, 76, 77, 78, 79], [61, 62, 63, 64, 65, 66, 67, 68, 69], [51, 52, 53, 54, 55, 56, 57, 58, 59], [41, 42, 43, 44, 45, 46, 47, 48, 49], [31, 32, 33, 34, 35, 36, 37, 38, 39], [21, 22, 23, 24, 25, 26, 27, 28, 29], [11, 12, 13, 14, 15, 16, 17, 18, 19],]
-// for (let x = 1; x < 9; x++) {
-//     location =
-// }
+// rows are numbered 1-8 with 1 starting on the white side of the board.
+// columns are lettered a-h with a starting on the queen'side of the board.
+// Location is coded as two numbers. (a-h,1-8) where a=1,b=2..., (ex. F3=(6,3)) 
+
+// get position function
+function getPosition(index) {
+    const colCount = 8;
+    // indexes start at 0 so add an offset of 1.
+    let offset = 1;
+    let rowPosition = Math.floor(8 - ((index) / colCount - offset));
+    let colPosition = (index + offset) % colCount;
+    // fix col 8 reading as 0
+    if (colPosition == 0) {
+        colPosition = 8;
+    }
+    console.log({ column: colPosition, row: rowPosition })
+    return { column: colPosition, row: rowPosition };
+}
+
+// get the index of the element to place in the getPosition function
+function getIndex(elm) {
+    var c = elm.parentNode.children;
+    i = 0;
+    for (; i < c.length; i++) { if (c[i] == elm) return i; }
+}
 
 // Black pieces
 let pawn1B = document.querySelector('#pawn1B');
@@ -45,6 +63,11 @@ let kingW = document.querySelector('#kingW');
 let bishopKsW = document.querySelector('#bishopKsW');
 let knightKsW = document.querySelector('#knightKsW');
 let rookKsW = document.querySelector('#rookKsW');
+
+// Starting Positions
+// let pawn1BLocation = getPosition(getIndex(pawn1B));
+// let pawn2BLocation = getPosition(getIndex(pawn1B));
+
 // add dragStart listeners
 // Black
 pawn1B.addEventListener('dragstart', dragStart);
@@ -135,9 +158,12 @@ function drop(e) {
             // capture the piece
             e.target.firstChild.remove();
             e.target.appendChild(draggable);
+            let location = getPosition(getIndex(e.target));
+            console.log(location)
         }
     }
     else {
         e.target.appendChild(draggable);
+        let location = getPosition(getIndex(e.target));
     }
 }

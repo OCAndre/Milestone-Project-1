@@ -57,10 +57,12 @@ row 2 & 7: all pawns
 - Turn timers
 
 # Project Planning
-- Date: Goals
-- Thu. 06/23: Create GitHub repository. Complete README.md.
-- Sun. 06/26: Complete chess board and have all assets.
-- Tue. 06/28: Finish base logic.
-- Thu. 06/30: Improve on the design.
-- Sun. 07/03: Deploy MVP to GitHub Pages.
-- Tue. 07/05: Submit completed project. Project presentations.
+
+| DATE       | GOALS                                 |
+|------------|---------------------------------------|
+| Thu. 06/23 | Create GitHub repository. Complete README.md. |
+|    Sun. 06/26        |       Complete chess board and have all assets.                                |
+|Tue. 06/28|         Finish base logic.                              |
+|Thu. 06/30|         Improve on the design..                              |
+|Sun. 07/03|         Deploy MVP to GitHub Pages.                              |
+|Tue. 07/05|         Submit completed project. Project presentations                              |
