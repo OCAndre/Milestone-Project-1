@@ -70,3 +70,8 @@ row 2 & 7: all pawns
 |Thu. 06/30|         Improve on the design.                              |
 |Sun. 07/03|         Deploy MVP to GitHub Pages.                              |
 |Tue. 07/05|         Submit completed project. Project presentations                              |
+
+
+# Known bugs
+- space a4 is not letting some pieces enter it that should be able to.
+- occasionally a piece will enter the space with another piece without capturing it.
