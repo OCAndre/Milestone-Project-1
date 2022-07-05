@@ -73,5 +73,5 @@ row 2 & 7: all pawns
 
 
 # Known bugs
-- row 1 is not always letting the pieces with limited movement to enter the spaces like they should.
+- column 1 is not always letting the pieces with limited movement enter the spaces they should be able to.
 - occasionally a piece will enter the space with another piece without capturing it.
