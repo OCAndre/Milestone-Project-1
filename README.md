@@ -73,5 +73,5 @@ row 2 & 7: all pawns
 
 
 # Known bugs
-- space a4 is not letting some pieces enter it that should be able to.
+- row 1 is not always letting the pieces with limited movement to enter the spaces like they should.
 - occasionally a piece will enter the space with another piece without capturing it.
