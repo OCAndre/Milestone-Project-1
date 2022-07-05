@@ -152,7 +152,7 @@ function drop(e) {
             }
             // If first Move -> can move 2 spaces, else -> 1 space
             if (firstMove == true) {
-                if ((location.row == startPosition.row + 1 || location.row == startPosition.row + 2) && location.column == startPosition.column) {
+                if (location == startPosition || (location.row == startPosition.row + 1 || location.row == startPosition.row + 2) && location.column == startPosition.column) {
                     // check that space is empty
                     if (e.target.firstChild == null) {
                         move(e, draggable)
@@ -160,7 +160,7 @@ function drop(e) {
                 }
             }
             else {
-                if (location.row == startPosition.row + 1 && location.column == startPosition.column) {
+                if (location == startPosition || (location.row == startPosition.row + 1 && location.column == startPosition.column)) {
                     // check that space is empty
                     if (e.target.firstChild == null) {
                         move(e, draggable)
@@ -206,8 +206,24 @@ function drop(e) {
                 }
             }
         }
+        else {
+            console.log('Not a valid move')
+        }
 
     }
+
+    // knight code is a little buggy so it is commented out for now.
+    // knight
+    else if (draggable.id === 'knightQsB' || draggable.id === 'knightKsB' || draggable.id === 'knightQsW' || draggable.id === 'knightKsW') {
+        let location = getPosition(getIndex(e.target));
+        if ((location.row == startPosition.row + 2 && location.column == startPosition.column + 1) || (location.row == startPosition.row + 2 && location.column == startPosition.column - 1) || (location.row == startPosition.row + 1 && location.column == startPosition.column + 2) || (location.row == startPosition.row - 1 && location.column == startPosition.column + 2) || (location.row == startPosition.row - 2 && location.column == startPosition.column + 1) || (location.row == startPosition.row - 2 && location.column == startPosition.column - 1) || (location.row == startPosition.row + 1 && location.column == startPosition.column - 2) || (location.row == startPosition.row - 1 && location.column == startPosition.column - 2)) {
+            move(e, draggable);
+        }
+        else {
+            console.log('Not a valid move')
+        }
+    }
+
     // king
     else if (draggable.id === 'kingW' || draggable.id === 'kingB') {
         let location = getPosition(getIndex(e.target));
@@ -215,7 +231,7 @@ function drop(e) {
             move(e, draggable);
         }
         else {
-            console.log('not a valid move')
+            console.log('Not a valid move')
         }
     }
     else {

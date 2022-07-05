@@ -39,12 +39,12 @@ row 2 & 7: all pawns
 
 ### MVP Criteria
 - A chess board with the proper setup (See game logic) should show at the start.
-- Players can move each piece according to the rules of chess. (can move freely atm)
+- Players can move each piece. (can move freely atm besides king and pawn)
 - Pieces should be removed from the board when a piece takes them.
 - Game ends if a player's king is taken.
 
 ### Post-MVP Plans
-- limit movement based on chess rules. (King completed)
+- limit movement based on chess rules. (King, pawn, and knight completed) (pawns and knights seem to occasionally have bugs in certain tiles.)
 - Have some way to track turns and not just have both sides able to move at the same time.
 - Have an animation of the board turning between turns.
 - change pawns into queens if they reach the opposite side of the board.
