@@ -212,7 +212,6 @@ function drop(e) {
 
     }
 
-    // knight code is a little buggy so it is commented out for now.
     // knight
     else if (draggable.id === 'knightQsB' || draggable.id === 'knightKsB' || draggable.id === 'knightQsW' || draggable.id === 'knightKsW') {
         let location = getPosition(getIndex(e.target));
@@ -234,6 +233,7 @@ function drop(e) {
             console.log('Not a valid move')
         }
     }
+
     else {
         move(e, draggable);
     }

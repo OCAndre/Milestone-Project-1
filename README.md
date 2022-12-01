@@ -1,10 +1,21 @@
-# Milestone-Project-1
+# Milestone-Project-1 - Chess Game
 
 ## GitHub pages link
 https://ocandre.github.io/Milestone-Project-1/
 
 ## Project Description
-I plan on making a basic version of chess. It will be built for pvp and will not have logic for a computer opponent.
+This project creates a basic chessboard that players can freely move pieces on. It will be built for pvp and will not have logic for a computer opponent. Further Updates will begin to limit where pieces can move on the board according to the rules of chess.
+
+## Demo
+![plot](./assets/Images/DEMO%20Screenshot.png)
+
+## Technologies Used
+- HTML
+- CSS
+- JavaScript
+
+## Installation and Dependencies
+- None. Just open the pages link.
 
 ## Game Logic
 
@@ -35,7 +46,11 @@ row 2 & 7: all pawns
 -Game over when a king is in checkmate
 - There should be a reset button to return pieces to their starting position.
 
-## Deliverables
+## Endpoints
+- Main chessboard page where the game is played
+- How to play page (Currently needs styled and could probably be updated from a pop up window)
+
+## Project Deliverables
 
 ### MVP Criteria
 - A chess board with the proper setup (See game logic) should show at the start.
@@ -71,7 +86,10 @@ row 2 & 7: all pawns
 |Sun. 07/03|         Deploy MVP to GitHub Pages.                              |
 |Tue. 07/05|         Submit completed project. Project presentations                              |
 
-
-# Known bugs
+# Outstanding Issues
+## Known bugs
 - column 1 is not always letting the pieces with limited movement enter the spaces they should be able to.
 - occasionally a piece will enter the space with another piece without capturing it.
+## Unfinished Functionality
+- restricted movement for Rooks, Bishops, and Queens.
+- stretch goals 
